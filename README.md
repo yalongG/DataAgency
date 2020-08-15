@@ -26,3 +26,16 @@ getLength()获取链表的长度
 findLastIndexNode()查找单链表的倒数第k个节点
 reverse()代码反转
 print()逆序打印
+
+单链表测试 LinkListDemo
+
+```java
+getNodeList(); //获得单链表
+getLastNode(hear,3);//获取单链表倒数第k个元素
+reverse(hear);// 链表反转
+printReverse(hear); // 在不改变单链表顺序的情况下，反向打印单链表
+merge(nodeList1, nodeList2); // 两个有序单链表进行合并，合并成一个有序链表
+```
+
+
+
