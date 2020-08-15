@@ -21,8 +21,32 @@ public class SingleLinkedListDemo {
 //        linkedList.delete(6);
         linkedList.show();
 //        System.out.println(getLength(linkedList.getHead()));
-        System.out.println(findLastIndexNode(linkedList.getHead(),3));
+//        System.out.println(findLastIndexNode(linkedList.getHead(),3));
+        System.out.println("---------------------");
+        reverse(linkedList.getHead());
+        linkedList.show();
 
+    }
+
+    // 将单链表反转
+    private static void reverse(HeroNode head) {
+        // 如果当前链表为空，或者只有一个节点，无需反转，直接返回
+        if (head.next == null || head.next.next == null) {
+            return;
+        }
+        // 定义一个辅助指针，帮我们遍历原来的链表
+        HeroNode cur = head.next;
+        HeroNode next = null; //指向当前节点的下一个节点
+        HeroNode reverserHead = new HeroNode(0, "", "");
+        // 遍历原来的链表
+        while (cur != null) {
+            next = cur.next; // 先暂时保存当前节点的下一个节点
+            cur.next = reverserHead.next; // 将cur的下一个节点指向新的链表的最前端
+            reverserHead.next = cur;
+            cur = next;
+        }
+        // 将head.next 指向reverseHead.next,实现单链表的反转
+        head.next = reverserHead.next;
     }
 
     // 查找单链表的倒数第k个节点(新浪面试题)
