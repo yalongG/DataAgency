@@ -16,3 +16,9 @@
 ArrayQueueDemo数组模拟队列 ArrayQueue
 
 CircleQueueDemo数组模拟环形队列CircleQueue
+
+##### _03linkedlist 单链表
+
+单链表 SingleLinkedList
+
+普通添加add()，根据下标添加addByOrder(),更新update(),删除delete(),显示打印show()
