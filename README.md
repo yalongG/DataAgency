@@ -25,3 +25,4 @@ CircleQueueDemo数组模拟环形队列CircleQueue
 getLength()获取链表的长度
 findLastIndexNode()查找单链表的倒数第k个节点
 reverse()代码反转
+print()逆序打印

@@ -23,9 +23,19 @@ public class SingleLinkedListDemo {
 //        System.out.println(getLength(linkedList.getHead()));
 //        System.out.println(findLastIndexNode(linkedList.getHead(),3));
         System.out.println("---------------------");
-        reverse(linkedList.getHead());
-        linkedList.show();
+//        reverse(linkedList.getHead());
+//        linkedList.show();
+        HeroNode hear = linkedList.getHead();
+        if (hear.next != null) {
+            print(hear.next);
+        }
+    }
 
+    private static void print(HeroNode node) {
+        if (node != null) {
+            print(node.next);
+            System.out.println(node.toString());
+        }
     }
 
     // 将单链表反转
