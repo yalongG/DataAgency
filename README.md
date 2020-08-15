@@ -22,3 +22,5 @@ CircleQueueDemo数组模拟环形队列CircleQueue
 单链表 SingleLinkedList
 
 普通添加add()，根据下标添加addByOrder(),更新update(),删除delete(),显示打印show()
+getLength()获取链表的长度
+findLastIndexNode()查找单链表的倒数第k个节点

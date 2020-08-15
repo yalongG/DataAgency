@@ -13,13 +13,57 @@ public class SingleLinkedListDemo {
         linkedList.addByOrder(new HeroNode(3, "吴用", "智多星"));
         linkedList.addByOrder(new HeroNode(2, "卢俊义", "玉麒麟"));
         linkedList.addByOrder(new HeroNode(1, "宋江", "及时雨"));
-        linkedList.addByOrder(new HeroNode(3, "吴用", "智多星"));
+//        linkedList.addByOrder(new HeroNode(3, "吴用", "智多星"));
+//        linkedList.show();
+////        linkedList.update(new HeroNode(2, "小卢", "玉麒麟～～"));
+//        linkedList.delete(3);
+//        linkedList.show();
+//        linkedList.delete(6);
         linkedList.show();
-//        linkedList.update(new HeroNode(2, "小卢", "玉麒麟～～"));
-        linkedList.delete(3);
-        linkedList.show();
-        linkedList.delete(6);
-        linkedList.show();
+//        System.out.println(getLength(linkedList.getHead()));
+        System.out.println(findLastIndexNode(linkedList.getHead(),3));
+
+    }
+
+    // 查找单链表的倒数第k个节点(新浪面试题)
+    // 思路
+    // 1.编写一个方法，接收head节点，同时接收一个index
+    // 2.index表示是倒数第index个节点
+    // 3.先把链表从头到位遍历，得到链表的总的长度 getLength
+    // 4.得到size后，我们从链表的第一个开始遍历(size - index)个，就能得到
+    // 5.如果找到了，则返回该节点，否则返回null
+    public static HeroNode findLastIndexNode(HeroNode head, int index) {
+        // 判断如果链表为空，返回null
+        if (head.next == null) {
+            return null; // 没有找到
+        }
+        // 第一次遍历得到链表的长度
+        int size = getLength(head);
+        // 第二次遍历到 size - index位置，就是我们倒数第k个节点
+        // 先做一个index的交验
+        if (index <= 0 || index > size) {
+            return null;
+        }
+        // 定义一个辅助变量
+        HeroNode temp = head.next;
+        for (int i = 0; i < size - index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    // 方法：获取单链表的节点个数（如果是带头节点的链表，需要不统计头节点）
+    public static int getLength(HeroNode head) {
+        if (head.next == null) { // 空链表
+            return 0;
+        }
+        int length = 0;
+        HeroNode cur = head.next;
+        while (cur != null) {
+            length++;
+            cur = cur.next;
+        }
+        return length;
 
     }
 }
@@ -28,6 +72,10 @@ public class SingleLinkedListDemo {
 class SingleLinkedList {
     // 先初始化一个头节点，头节点不要动
     private HeroNode head = new HeroNode(0, "", "");
+
+    public HeroNode getHead() {
+        return head;
+    }
 
     // 添加节点到单向链表
     // 思路：当不考虑编号的顺序时
