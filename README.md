@@ -49,3 +49,13 @@ update(HeroNode node);  // 更新链表数据
 delete(int no);  // 删除链表数据
 ```
 
+##### _05Josepfu 环形链表的约瑟夫问题
+
+Josepfu 约瑟夫问题
+
+```java
+ addBoy(int nums); //  添加节点，构建成一个环形链表
+ show(); // 遍历当前的环形链表
+ countBoy(int startNo, int countNumber, int nums); // 计算出出圈的顺序
+```
+
