@@ -37,5 +37,15 @@ printReverse(hear); // 在不改变单链表顺序的情况下，反向打印单
 merge(nodeList1, nodeList2); // 两个有序单链表进行合并，合并成一个有序链表
 ```
 
+##### _04DoubleLinedList 双向链表
 
+DoubleLinkListDemo双向链表测试 
+
+```java
+show();  // 遍历双向列表的方法
+add(HeroNode node);     // 添加数据
+addByOrder(HeroNode node);   // 根据id有序添加
+update(HeroNode node);  // 更新链表数据
+delete(int no);  // 删除链表数据
+```
 
