@@ -59,3 +59,12 @@ Josepfu 约瑟夫问题
  countBoy(int startNo, int countNumber, int nums); // 计算出出圈的顺序
 ```
 
+##### _06Stack 栈
+
+ArrayStackDemo 数组实现栈操作
+
+```java
+push(int e); // 入栈
+pop(); // 出栈
+```
+
