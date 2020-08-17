@@ -68,3 +68,10 @@ push(int e); // 入栈
 pop(); // 出栈
 ```
 
+LinkStackDemo 链表模拟栈操作
+
+```java
+push(NodeList e); // 入栈
+pop(); // 出栈
+```
+
