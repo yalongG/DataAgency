@@ -85,7 +85,9 @@ Test3用系统提供的栈，实现计算机的操作
 
 ##### _07PolandNotation 逆波兰表达式
 
-字符串生成逆波兰表达式
+PolandNotation字符串生成逆波兰表达式
 
 对逆波兰表达式求值
+
+PolandNotation1 中缀表达式转化成后缀表达式
 
