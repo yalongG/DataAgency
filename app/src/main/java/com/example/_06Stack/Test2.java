@@ -25,7 +25,7 @@ public class Test2 {
                     opera(operaStack, numStack, ch);
                     break;
                 case 1: //  1是数字
-                    sb.append(ch);
+                    sb.append(ch - 48);
                     if (i == expression.length() - 1) {
                         num = new Num(Integer.parseInt(sb.toString()));
                         numStack.push(num);
