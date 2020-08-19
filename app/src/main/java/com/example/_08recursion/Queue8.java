@@ -1,4 +1,4 @@
-package com.example._8recursion;
+package com.example._08recursion;
 
 // 8皇后问题
 public class Queue8 {

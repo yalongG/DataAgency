@@ -91,11 +91,15 @@ PolandNotation字符串生成逆波兰表达式
 
 PolandNotation1 中缀表达式转化成后缀表达式
 
-##### _8recursion
+##### _8recursion 递归
 
 MiGong 迷宫
 
 Queue8八皇后问题
+
+##### _09sort 排序
+
+_01BubleSort冒泡排序
 
 
 
