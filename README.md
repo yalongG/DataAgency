@@ -103,6 +103,7 @@ _01BubleSort冒泡排序
 _02SelectSort选择排序
 _03InsertSort插入排序
 _04ShellSort希尔排序
+_05QuickSort快速排序
 
 
 
