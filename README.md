@@ -106,6 +106,7 @@ _04ShellSort希尔排序
 _05QuickSort快速排序
 _06MergetSort归并排序
 _07RadixSort基数排序
+SortTest 排序测试，一共有7中排序
 
 
 
