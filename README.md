@@ -111,6 +111,7 @@ SortTest 排序测试，一共有7中排序
 ##### __10search 查找
 
 SeqSearch 顺序查找
+BinarySearch 二分查找法
 
 
 
