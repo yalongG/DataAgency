@@ -108,12 +108,16 @@ _06MergetSort归并排序
 _07RadixSort基数排序
 SortTest 排序测试，一共有7中排序
 
-##### __10search 查找
+##### _10search 查找
 
 SeqSearch 顺序查找
 BinarySearch 二分查找法
 InsertValueSearch 差值查找
 FibonacciSearch 斐波那契查找
+
+##### _11hashtab 哈希表
+
+HashTabDemo 哈希表测试
 
 
 
