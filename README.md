@@ -108,6 +108,10 @@ _06MergetSort归并排序
 _07RadixSort基数排序
 SortTest 排序测试，一共有7中排序
 
+##### __10search 查找
+
+SeqSearch 顺序查找
+
 
 
 
