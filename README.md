@@ -122,6 +122,7 @@ HashTabDemo 哈希表测试
 ##### _12tree 树
 _01BinaryTreeDemo 二叉树
 TreePrintTest 数打印测试
+_02ArrBinaryTreeDemo 数组顺序存储二叉树
 
 
 
