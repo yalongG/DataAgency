@@ -24,10 +24,16 @@ public class _01BinaryTreeDemo {
 //        tree.infixOrder();
 //        System.out.println("---------------------");
 //        tree.postOrder();
-        HeroNode heroNode = tree.preOrderSearch(5);
-        if (heroNode != null) {
-            System.out.println(heroNode);
-        }
+//        HeroNode heroNode = tree.preOrderSearch(5);
+//        if (heroNode != null) {
+//            System.out.println(heroNode);
+//        }
+
+        System.out.println("删除前，前序遍历");
+        tree.preOrder();
+        tree.delNode(3);
+        System.out.println("删除后，前序遍历");
+        tree.preOrder();
 
     }
 }
@@ -96,6 +102,21 @@ class BinaryTree {
         }
         return null;
     }
+
+    // 删除节点
+    public void delNode(int no) {
+        if (this.root != null) {
+
+            // 如果只有一个root节点，这里立即判断root是不是就是要删除的节点
+            if (this.root.getNo() == no) {
+                this.root = null;
+            } else {
+                this.root.delNode(no);
+            }
+        } else {
+            System.out.println("二叉树为空，无法删除");
+        }
+    }
 }
 
 // 先创建HeroNode节点
@@ -132,6 +153,31 @@ class HeroNode {
                 "no=" + no +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    // 递归删除节点
+    // 如果删除的节点是叶子节点，则删除该节点
+    // 如果删除的节点是非叶子节点，则删除该子数
+    public void delNode(int no) {
+        if (this.left != null) {
+            if (this.left.no == no) {
+                this.left = null;
+                return;
+            }
+        }
+
+        if (this.right != null) {
+            if (this.right.no == no) {
+                this.right = null;
+                return;
+            }
+        }
+        if (this.left != null) {
+            this.left.delNode(no);
+        }
+        if (this.right != null) {
+            this.right.delNode(no);
+        }
     }
 
     // 编写前序遍历的方法
