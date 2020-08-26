@@ -124,6 +124,7 @@ _01BinaryTreeDemo 二叉树
 TreePrintTest 数打印测试
 _02ArrBinaryTreeDemo 数组顺序存储二叉树
 _03ThreadedBinaryTreeDemo 线索化二叉树
+HeapSort 堆排序
 
 
 
