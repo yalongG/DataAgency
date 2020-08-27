@@ -120,11 +120,16 @@ FibonacciSearch 斐波那契查找
 HashTabDemo 哈希表测试
 
 ##### _12tree 树
+
 _01BinaryTreeDemo 二叉树
 TreePrintTest 数打印测试
 _02ArrBinaryTreeDemo 数组顺序存储二叉树
 _03ThreadedBinaryTreeDemo 线索化二叉树
 HeapSort 堆排序
+
+##### _13huffmantree 赫夫曼树
+
+HuffmanTree 赫夫曼树 用数组生成赫夫曼树
 
 
 
