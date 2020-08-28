@@ -130,6 +130,7 @@ HeapSort 堆排序
 ##### _13huffmantree 赫夫曼树
 
 HuffmanTree 赫夫曼树 用数组生成赫夫曼树
+HuffmanCode 赫夫曼编码 将字符串通过赫夫曼编码进行压缩与反解压
 
 
 
