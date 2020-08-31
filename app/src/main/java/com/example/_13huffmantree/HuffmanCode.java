@@ -2,6 +2,13 @@ package com.example._13huffmantree;
 
 import android.support.annotation.NonNull;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -11,15 +18,115 @@ import java.util.Map;
 // 哈夫曼编码
 public class HuffmanCode {
     public static void main(String[] args) {
-        String str = "i like like like java do you like a java";
-        byte[] contentBytes = str.getBytes();
+//        String str = "i like like like java do you like a java";
+//        byte[] contentBytes = str.getBytes();
+//
+//        byte[] huffmanCodeBytes = huffmanZip(contentBytes);
+//        System.out.println(new String(huffmanCodeBytes));
+//
+//        // 如何将数据进行解压(解码)
+//        byte[] decode = decode(huffmanCodes, huffmanCodeBytes);
+//        System.out.println(new String(decode));
 
-        byte[] huffmanCodeBytes = huffmanZip(contentBytes);
-        System.out.println(new String(huffmanCodeBytes));
+//        zipFile("/Users/mac/Desktop/Flutter 实战.pdf", "/Users/mac/Desktop/file.zip");
+//        unZipFile();
+    }
 
-        // 如何将数据进行解压(解码)
-        byte[] decode = decode(huffmanCodes, huffmanCodeBytes);
-        System.out.println(new String(decode));
+    // 编写一个方面，完成对压缩文件的解压
+
+    /**
+     * 完成对压缩文件的解压
+     *
+     * @param zipFile 准备解压的文件
+     * @param dstFile 将文件解压到哪个路径
+     */
+    private static void unZipFile(String zipFile, String dstFile) {
+        // 定义文件输入流
+        InputStream is = null;
+        // 定义一个对象输入流
+        ObjectInputStream ois = null;
+        // 定义文件的输出流
+        OutputStream os = null;
+        try {
+            is = new FileInputStream(zipFile);
+            ois = new ObjectInputStream(is);
+            // 读取byte数组 huffmanBytes
+            byte[] huffmanBytes = (byte[]) ois.readObject();
+            // 读取赫夫曼编码表
+            Map<Byte, String> codes = (Map<Byte, String>) ois.readObject();
+            // 解码
+            byte[] bytes = decode(codes, huffmanBytes);
+            // 将bytes数组写入到目标文件
+            os = new FileOutputStream(dstFile);
+            // 写数据到 dstFile中
+            os.write(bytes);
+            os.flush();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (is != null) {
+                    is.close();
+                }
+                if (ois != null) {
+                    ois.close();
+                }
+                if (os != null) {
+                    os.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    // 编写方法，将一个文件进行压缩
+
+    /**
+     * 将一个文件进行压缩
+     *
+     * @param srcFile 你传入的希望压缩的文件的全路径
+     * @param dstFile 我们压缩后将压缩文件放大哪个目录
+     */
+    private static void zipFile(String srcFile, String dstFile) {
+        FileInputStream is = null;
+        OutputStream os = null;
+        ObjectOutputStream oos = null;
+        try {
+            // 创建文件的输入流
+            is = new FileInputStream(srcFile);
+            // 创建一个和源文件大小的byte[]
+            byte[] b = new byte[is.available()];
+            // 读取文件
+            is.read(b);
+            // 直接对源文件压缩
+            byte[] bytes = huffmanZip(b);
+            // 创建文件的输出流，存放压缩文件
+            os = new FileOutputStream(dstFile);
+            // 创建一个和文件输出流关联的ObjectOutputStream
+            oos = new ObjectOutputStream(os);
+            // 把赫夫曼编码后的字节数组写入压缩文件
+            oos.writeObject(bytes);
+            // 这里我们以对象流的方式写入赫夫曼编码，是为了以后我们恢复源文件时使用
+            // 注意一定要把赫夫曼编码写入压缩文件
+            oos.writeObject(huffmanCodes);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (is != null) {
+                    is.close();
+                }
+                if (oos != null) {
+                    oos.close();
+                }
+                if (os != null) {
+                    os.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     // 完成数据的解压
