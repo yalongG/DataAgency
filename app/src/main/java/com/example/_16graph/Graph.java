@@ -2,6 +2,7 @@ package com.example._16graph;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 // 图
@@ -28,7 +29,8 @@ public class Graph {
         graph.insertEdge(1, 4, 1);
 
         graph.showGraph();
-        graph.dfs();
+//        graph.dfs();
+        graph.bfs();
 
     }
 
@@ -91,6 +93,47 @@ public class Graph {
         for (int i = 0; i < getNumOfVertex(); i++) {
             if (!isVisited[i]) {
                 dfs(isVisited, i);
+            }
+        }
+    }
+
+    // 对一个结点进行广度优先遍历的方法
+    private void bfs(boolean[] isVisited, int i) {
+        int u; // 表示队列的头结点对应下标
+        int w; // 邻接结点w
+        // 队列，结点访问的顺序
+        LinkedList<Integer> queue = new LinkedList<Integer>();
+        // 访问结点，输出结点的信息
+        System.out.print(getValueByIndex(i) + " -> ");
+        // 标记为已访问
+        isVisited[i] = true;
+        // 将结点加入队列
+        queue.addLast(i);
+        while (!queue.isEmpty()) {
+            // 取出队列的头结点下标
+            u = queue.removeFirst();
+            // 得到第一个临界点的下标
+            w = getFirstNeighbor(u);
+            while (w != -1) { // 找到
+                if (!isVisited[w]) {
+                    // 访问结点，输出结点的信息
+                    System.out.print(getValueByIndex(w) + " -> ");
+                    // 标记为已访问
+                    isVisited[w] = true;
+                    // 入队列
+                    queue.addLast(w);
+                }
+                // 以 u 为前驱点，找 w 后面的下一个结点
+                w = getNextNeighbor(u, w);
+            }
+        }
+    }
+
+    // 遍历所有结点进行广度优先重载
+    public void bfs() {
+        for (int i = 0; i < getNumOfVertex(); i++) {
+            if (!isVisited[i]) {
+                bfs(isVisited, i);
             }
         }
     }
