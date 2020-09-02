@@ -14,23 +14,34 @@ public class Graph {
     private boolean[] isVisited;
 
     public static void main(String[] args) {
-        int n = 5; // 结点的个数
+        int n = 8; // 结点的个数
         Graph graph = new Graph(n);
-        String[] vertexValues = {"A", "B", "C", "D", "E"};
+//        String[] vertexValues = {"A", "B", "C", "D", "E"};
+        String[] vertexValues = {"1", "2", "3", "4", "5", "6", "7", "8"};
         for (String vertexValue : vertexValues) {
             graph.insertVertex(vertexValue);
         }
 
         // 添加边
+//        graph.insertEdge(0, 1, 1);
+//        graph.insertEdge(0, 2, 1);
+//        graph.insertEdge(1, 2, 1);
+//        graph.insertEdge(1, 3, 1);
+//        graph.insertEdge(1, 4, 1);
+
         graph.insertEdge(0, 1, 1);
         graph.insertEdge(0, 2, 1);
-        graph.insertEdge(1, 2, 1);
         graph.insertEdge(1, 3, 1);
         graph.insertEdge(1, 4, 1);
+        graph.insertEdge(3, 7, 1);
+        graph.insertEdge(4, 7, 1);
+        graph.insertEdge(2, 5, 1);
+        graph.insertEdge(2, 6, 1);
+        graph.insertEdge(5, 6, 1);
 
         graph.showGraph();
-//        graph.dfs();
-        graph.bfs();
+        graph.dfs();
+//        graph.bfs();
 
     }
 
