@@ -4,7 +4,7 @@ package com.example._17algorithm;
 public class _01BinarySearchNoRecur {
     public static void main(String[] args) {
         int[] arr = {1, 3, 8, 10, 11, 67, 100};
-        System.out.println(binarySerach(arr, 100));
+        System.out.println(binarySearch(arr, 100));
 
     }
 
@@ -12,7 +12,7 @@ public class _01BinarySearchNoRecur {
     // arr 需要查找的数组, arr 是升序排序
     // target 需要查找的数
     // 返回对应的下标，-1表示没有找到
-    private static int binarySerach(int[] arr, int target) {
+    private static int binarySearch(int[] arr, int target) {
         int left = 0;
         int right = arr.length - 1;
         int mid;
