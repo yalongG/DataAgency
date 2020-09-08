@@ -152,5 +152,6 @@ _03dynamic 动态规划，背包问题
 _04kmp KMP算法
 _05Greedy 贪心算法
 _06Prim 普里姆算法
+_07Kruskal 克鲁斯卡算法
 
 
