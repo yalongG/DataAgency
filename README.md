@@ -153,5 +153,7 @@ _04kmp KMP算法
 _05Greedy 贪心算法
 _06Prim 普里姆算法
 _07Kruskal 克鲁斯卡算法
+_08Dijkstra 迪杰斯特拉 算法
+_08Dijkstra 迪杰斯特拉 算法
 
 
