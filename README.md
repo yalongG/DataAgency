@@ -155,5 +155,6 @@ _06Prim 普里姆算法
 _07Kruskal 克鲁斯卡算法
 _08Dijkstra 迪杰斯特拉 算法
 _09Floyd 弗洛伊德 算法
+_10horse 马踏棋盘 算法
 
 
