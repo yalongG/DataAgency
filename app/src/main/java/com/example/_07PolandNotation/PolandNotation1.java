@@ -8,11 +8,12 @@ public class PolandNotation1 {
     public static void main(String[] args) {
         // 完成将一个中缀表达式转成后缀表达式的功能
         // 说明
-        // 1. (3+1)*2+((2+32)*4)-5 => 1 2 3 + 4 * + 5 -
+        // 1. (3+1)*2+((2+32)*4)-5 => 3 1 + 2 * 2 32 + 4 * + 5 -
         // 2.因为直接对str进行操作，不方便，因此现将"1+((2+3)*4)-5" => 中缀的表达式对应的list
 
         String infix = "(3+1)*2+((2+32)*4)-5";
         List<String> stringList = getList(infix);
+        System.out.println(stringList);
         String poland = getPoland(stringList);
         System.out.println(poland);
         int value = getValue(poland);

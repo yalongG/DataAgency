@@ -21,6 +21,8 @@ public class _03ThreadedBinaryTreeDemo {
 
         BinaryTree1 binaryTree1 = new BinaryTree1();
         binaryTree1.setRoot(root);
+        binaryTree1.infixOrder();
+        System.out.println("-------------------");
         binaryTree1.threadedNodes();
 
 //        HeroNode1 leftNode = node5.left;
@@ -88,7 +90,7 @@ class BinaryTree1 {
             node.setLeftType(1);
         }
 
-        // 2.2 处理候机结点
+        // 2.2 处理后继结点
         if (pre != null && pre.right == null) {
             // 让前驱结点的右指针指向当前结点
             pre.right = node;

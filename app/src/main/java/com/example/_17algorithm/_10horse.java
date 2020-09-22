@@ -18,10 +18,10 @@ public class _10horse {
     private static boolean finished; // 如果为 true ，表示成功
 
     public static void main(String[] args) {
-        X = 8;
-        Y = 8;
+        X = 6;
+        Y = 6;
 
-        int row = 1; // 马初始位置的行，从1开始编号
+        int row = 3; // 马初始位置的行，从1开始编号
         int column = 1; // 马初始位置的列，从1开始编号
         // 创建棋盘
         int[][] chessboard = new int[X][Y];

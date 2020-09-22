@@ -58,12 +58,12 @@ public class _03dynamic {
         }
 
         // 输出最后我们放入的哪些商品
-//        for (int i = 0; i < path.length; i++) {
-//            for (int j = 0; j < path[i].length; j++) {
-//                System.out.print(path[i][j] + "  ");
-//            }
-//            System.out.println();
-//        }
+        for (int i = 0; i < path.length; i++) {
+            for (int j = 0; j < path[i].length; j++) {
+                System.out.print(path[i][j] + "  ");
+            }
+            System.out.println();
+        }
 
         int i = path.length - 1; // 行的最大下标
         int j = path[0].length - 1; // 列的最大下标

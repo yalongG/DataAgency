@@ -4,7 +4,7 @@ package com.example._17algorithm;
 public class _02DAC {
     public static void main(String[] args) {
         HanoiTower hanoitower = new HanoiTower();
-        hanoitower.hanoiTower(64, 'A', 'B', 'C');
+        hanoitower.hanoiTower(5, 'A', 'B', 'C');
     }
 }
 

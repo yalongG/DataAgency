@@ -88,26 +88,6 @@ class HashTab {
     }
 }
 
-// 表示一个雇员
-class Emp {
-    public int id;
-    public String name;
-    public Emp next; // 默认为空
-
-    public Emp(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Emp{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
-}
-
 //创建一个EmpLinkedList，表示链表
 class EmpLinkedList {
     // 头指针，指向第一个Emp，因此我们这个链表的head 是直接指向第一个Emp
@@ -162,6 +142,27 @@ class EmpLinkedList {
             curEmp = curEmp.next;
         }
         return curEmp;
+    }
+}
+
+
+// 表示一个雇员
+class Emp {
+    public int id;
+    public String name;
+    public Emp next; // 默认为空
+
+    public Emp(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Emp{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
 

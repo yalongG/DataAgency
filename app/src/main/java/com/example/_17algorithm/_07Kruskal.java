@@ -127,6 +127,7 @@ public class _07Kruskal {
         // 获取图中所有的边的集合，一共有12条边
         EData[] edges = getEdges();
         sortEdges(edges);
+//        System.out.println(edges);
 
         // 遍历 edges 数组，将边添加到最小生成树中时，判断是准备加入的边是否形成回来，如果没有，就加入rets，否则不能加入
         for (int i = 0; i < edgeNum; i++) {
